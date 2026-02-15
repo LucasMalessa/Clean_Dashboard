@@ -1,0 +1,27 @@
+Data,Categoria,Descrição,Valor,Moeda,Status
+2024-01-15,Receita,Venda de produtos,1500.50,BRL,Confirmado
+2024-01-16,Despesa,Compra de estoque,850.75,BRL,Confirmado
+2024-01-17,Receita,Serviços prestados,2200,BRL,Confirmado
+2024-01-18,Despesa,Aluguel,3000.00,BRL,Confirmado
+2024-01-19,Receita,Venda de produtos,,,Pendente
+2024-01-20,Despesa,Salários,8500.50,BRL,Confirmado
+2024-01-21,Receita,Venda de produtos,1800.25,BRL,Confirmado
+2024-01-22,,Fornecedores,450.00,BRL,Confirmado
+2024-01-23,Receita,Serviços prestados,3100.75,BRL,Confirmado
+2024-01-24,Despesa,Utilities,650.30,BRL,
+2024-01-25,Receita,Venda de produtos,2100.00,BRL,Confirmado
+2024-01-26,Despesa,Marketing,1200,BRL,Confirmado
+2024-01-27,Receita,Venda de produtos,1650.50,BRL,Confirmado
+2024-01-28,Despesa,Aluguel,3000.00,BRL,Confirmado
+2024-01-29,Receita,Serviços prestados,2800.00,BRL,Confirmado
+2024-01-30,Despesa,Compra de estoque,920.40,BRL,Confirmado
+2024-02-01,Receita,Venda de produtos,1750.00,BRL,Confirmado
+2024-02-02,Despesa,Salários,8500.50,BRL,Confirmado
+2024-02-03,Receita,Serviços prestados,,BRL,Confirmado
+2024-02-04,Despesa,Utilities,680.00,BRL,Confirmado
+2024-02-05,Receita,Venda de produtos,1950.75,BRL,Confirmado
+2024-02-06,Despesa,Marketing,1350.00,BRL,Confirmado
+2024-02-07,Receita,Venda de produtos,2250.30,BRL,Confirmado
+2024-02-08,Despesa,Fornecedores,520.00,BRL,Confirmado
+2024-02-09,Receita,Serviços prestados,2950.00,BRL,Confirmado
+2024-02-10,Despesa,Compra de estoque,875.60,BRL,Confirmado
