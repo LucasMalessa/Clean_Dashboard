@@ -57,7 +57,7 @@ class ProcessadorFinanceiro:
         # Tratamento específico por coluna
         if 'Categoria' in self.df_processado.columns:
             # Preenche categorias vazias com "Não Classificado"
-            self.df_processado['Categoria'].fillna('Não Classificado', inplace=True)
+            self.df_processado['Categoria'] = self.df_processado['Categoria'].fillna('Não Classificado')
         
         if 'Valor' in self.df_processado.columns:
             # Remove linhas onde Valor é nulo (transações inválidas)
@@ -69,12 +69,12 @@ class ProcessadorFinanceiro:
         
         if 'Status' in self.df_processado.columns:
             # Preenche status vazios com "Não Informado"
-            self.df_processado['Status'].fillna('Não Informado', inplace=True)
+            self.df_processado['Status'] = self.df_processado['Status'].fillna('Não Informado')
         
         if 'Moeda' in self.df_processado.columns:
             # Preenche moeda vazia com a mais comum
             moeda_padrao = self.df_processado['Moeda'].mode()[0] if not self.df_processado['Moeda'].mode().empty else 'BRL'
-            self.df_processado['Moeda'].fillna(moeda_padrao, inplace=True)
+            self.df_processado['Moeda'] = self.df_processado['Moeda'].fillna(moeda_padrao)
         
         print("✅ Valores nulos tratados")
         return self
@@ -235,7 +235,7 @@ class ProcessadorFinanceiro:
                     try:
                         if len(str(cell.value)) > max_length:
                             max_length = len(str(cell.value))
-                    except:
+                    except (TypeError, AttributeError):
                         pass
                 
                 adjusted_width = min(max_length + 2, 50)
