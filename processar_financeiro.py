@@ -16,7 +16,19 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from datetime import datetime
 import warnings
+import locale
+
 warnings.filterwarnings('ignore')
+
+# Tenta configurar locale para português
+try:
+    locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+except locale.Error:
+    try:
+        locale.setlocale(locale.LC_TIME, 'pt_BR')
+    except locale.Error:
+        # Se não conseguir, mantém o locale padrão (nomes em inglês)
+        pass
 
 
 class ProcessadorFinanceiro:
@@ -87,6 +99,8 @@ class ProcessadorFinanceiro:
         colunas_texto = self.df_processado.select_dtypes(include=['object']).columns
         for col in colunas_texto:
             if col != 'Data':  # Não normalizar a coluna de data
+                # Garante que a coluna é string antes de aplicar métodos de string
+                self.df_processado[col] = self.df_processado[col].astype(str)
                 self.df_processado[col] = self.df_processado[col].str.strip()
                 self.df_processado[col] = self.df_processado[col].str.title()
         
@@ -122,7 +136,12 @@ class ProcessadorFinanceiro:
         return self
     
     def adicionar_colunas_derivadas(self):
-        """Adiciona colunas derivadas úteis para análise."""
+        """
+        Adiciona colunas derivadas úteis para análise.
+        
+        Nota: Os nomes dos meses e dias da semana serão em português se o 
+        sistema tiver locale pt_BR configurado, caso contrário serão em inglês.
+        """
         print("\n➕ Adicionando colunas derivadas...")
         
         if 'Data' in self.df_processado.columns:

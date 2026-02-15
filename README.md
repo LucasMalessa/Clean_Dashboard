@@ -98,6 +98,8 @@ O arquivo CSV deve conter as seguintes colunas:
 | Moeda | String | Código da moeda (ex: BRL, USD) | ❌ |
 | Status | String | Status da transação | ❌ |
 
+**Nota sobre Localização**: Os nomes dos meses e dias da semana nas colunas derivadas serão em português se o sistema tiver o locale `pt_BR` configurado. Caso contrário, serão exibidos em inglês. Isso não afeta a funcionalidade do script.
+
 ### Exemplo de Dados
 
 ```csv
